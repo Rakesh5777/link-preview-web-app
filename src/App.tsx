@@ -10,9 +10,9 @@ import {
 } from "@ant-design/icons";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import axios from "axios";
 
 const { Meta } = Card;
-const axios = require("axios").default;
 
 const { Search } = Input;
 
@@ -179,6 +179,11 @@ const App: React.FC = () => {
     return [...getUrls(val).values()];
   };
 
+  const instance = axios.create({
+    baseURL: "https://link-preview-api-ts.herokuapp.com",
+    timeout: 1000,
+  });
+
   const onSearch = (val: string) => {
     if (!val) return;
     if (!getValidUrls(val).length) {
@@ -187,7 +192,7 @@ const App: React.FC = () => {
     }
     setIsError(false);
     setIsLoading(true);
-    axios
+    instance
       .post("/preview-urls", {
         urls: value,
       })
