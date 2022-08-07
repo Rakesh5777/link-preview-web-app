@@ -30,6 +30,7 @@ const Container = styled.div`
   align-items: center;
   padding-inline: 10%;
   background-color: #f3f3f3af;
+  overflow: none;
 `;
 
 const Actions = styled.div`
