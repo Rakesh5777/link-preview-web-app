@@ -181,7 +181,7 @@ const App: React.FC = () => {
 
   const instance = axios.create({
     baseURL: "https://link-preview-api-ts.herokuapp.com",
-    timeout: 1000,
+    timeout: 3000,
   });
 
   const onSearch = (val: string) => {
