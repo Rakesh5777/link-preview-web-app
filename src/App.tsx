@@ -263,10 +263,7 @@ const App: React.FC = () => {
                   cover={
                     <img
                       alt={value?.image}
-                      src={
-                        value?.image ||
-                        "https://www.publicdomainpictures.net/pictures/280000/velka/not-found-image-15383864787lu.jpg"
-                      }
+                      src={value?.image || "not-found-image.jpg"}
                     />
                   }
                 >
